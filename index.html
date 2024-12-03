@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio of Kelvin Dampson - Frontend Developer">
+<title>Kelvin Dampson - Frontend Developer</title>
+
+<!-- Favicon for all devices -->
+<link rel="icon" href="kelvin.png" type="image/png"> <!-- Favicon -->
+
+<!-- Favicon for different sizes -->
+<link rel="icon" href="kelvin-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="kelvin-32x32.png" sizes="32x32" type="image/png">
+
+<!-- Apple devices -->
+<link rel="apple-touch-icon" href="kelvin.png">
+
+<!-- Other meta tags for styling and icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9; /* Light grey background */
+            color: #333; /* Dark text for readability */
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
+        header {
+            background: #2c3e50; /* Dark blue background */
+            color: #ecf0f1; /* Light text */
+            padding: 20px 0;
+            text-align: center;
+            */position: sticky;*/
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            color: #ecf0f1;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #3498db; /* Lighter blue on hover */
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+
+        }
+        section {
+            padding: 20px;
+            background: #ffffff; /* White background for sections */
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        section:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+        }
+        h2 {
+            border-bottom: 2px solid #3498db; /* Underline for section titles */
+            padding-bottom: 5px;
+        }
+        .portfolio img, .fun-fact img, .service img, .testimonial img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .portfolio, .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .cta-button, .download-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #3498db; /* Primary blue button */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .cta-button:hover, .download-button:hover {
+            background: #2980b9; /* Darker blue on hover */
+            transform: scale(1.05); /* Slight grow effect */
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #2c3e50; /* Dark blue footer */
+            color: #ecf0f1; /* Light text */
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        footer a {
+            color: #3498db; /* Light blue for icons */
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.5em; /* Size of icons */
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: #2980b9; /* Change color on hover */
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        form label {
+            margin: 10px 0 5px;
+        }
+        form input, form textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+/* Container to hold profile picture and about text */
+.profile-container {
+  display: flex;
+  align-items: flex-start; /* Aligns items to the top */
+  justify-content: flex-start; /* Align items to the left */
+  gap: 30px; /* Adds space between the image and the text */
+  margin-bottom: 40px; /* Adds space below the about section */
+}
+
+/* Profile picture styling */
+#profile-picture {
+  border-radius: 50%; /* Circular profile photo */
+  width: 200px;
+  height: 250px;
+  object-fit: cover; /* Ensures the image fits well */
+  border: 3px solid #3498db; /* Blue border */
+}
+
+/* About Me Section */
+.about-me {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    margin: 40px 0;
+    border-radius: 10px;
+}
+
+.about-me h2 {
+    font-size: 2.5em;
+    color: #3498db;
+    margin-bottom: 20px;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#profile-picture {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%; /* Makes the image round */
+    border: 4px solid #3498db;
+}
+
+.about-me-text {
+    font-size: 1.2em;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    text-align: center;
+}
+
+
+/* Fun Facts Section */
+.fun-facts {
+    text-align: center;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin: 40px 0;
+}
+
+.fun-facts h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #3498db;
+}
+
+.fun-fact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+/* Each individual fun fact item */
+.fact-item {
+    width: 22%; /* Adjust width based on how many items per row */
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.fact-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.fact-item p {
+    margin-top: 15px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+
+/* Carousel container */
+.testimonial-carousel {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Individual testimonial slides */
+.testimonial-slide {
+    flex: 0 0 33%; /* Show 3 slides at once (adjust for 1 or 2 slides) */
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Testimonial images */
+.testimonial-slide img {
+    max-width: 100%;
+    height: 350px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 4px solid #3498db;
+    object-fit: cover;
+}
+
+
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column; /* Stack navigation items */
+            }
+            .portfolio, .services {
+                grid-template-columns: 1fr; /* Single column for smaller screens */
+            }
+        }
+        @media (max-width: 480px) {
+            nav a {
+                margin: 5px 0; /* Smaller margins for mobile */
+            }
+            .cta-button, .download-button {
+                width: 100%; /* Full width buttons on mobile */
+                text-align: center;
+            }
+        }
+		
+
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Kelvin Dampson</h1>
+    <p>Frontend Developer</p>
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#services">Services</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <section id="portfolio" class="portfolio">
+        <h2>Portfolio</h2>
+        <div>
+            <img src="princewise1.png" alt="Project 1">
+            <h3>Princewise Financial Website</h3>
+            <p>A financial consultant website using HTML, CSS and JavaScript. <a href="https://dampson18.github.io/">View Project</a></p>
+        </div>
+        <div>
+            <img src="biblequiz.jpeg" alt="Project 2">
+            <h3>Quiz App</h3>
+            <p>A Bible Quiz App on the Book of Revelations. <a href="https://dampson18.github.io/biblequiz.github.io/">View Project</a></p>
+        </div>
+        <div>
+            <img src="todolist.jpeg" alt="Project 3">
+            <h3>To-do-List</h3>
+            <p>A simple To-do-List App with an Add and Delete feature. <a href="https://dampson18.github.io/todolist/">View Project</a></p>
+        </div>
+        <div>
+            <img src="calculator.png" alt="Project 4">
+            <h3>Calculator</h3>
+            <p>A simple Calculator with functionalities. <a href="https://dampson18.github.io/calculator/">View Project</a></p>
+        </div>
+		<div>
+            <img src="splitscreen.jpg" alt="Project 4">
+            <h3>Split Screen App</h3>
+            <p>An App with a book-like interface for comparing text. <a href="https://dampson18.github.io/splitscreen/">View Project</a></p>
+        </div>
+		<div>
+            <img src="wordeditor.png" alt="Project 4">
+            <h3>Word Editor</h3>
+            <p>An basic word editor for text formatting and previewing. <a href="https://dampson18.github.io/wordeditor/">View Project</a></p>
+        </div>
+		<div>
+            <img src="imagegallery.jpg" alt="Project 4">
+            <h3>Image Gallery</h3>
+            <p>A simple image gallery where you can upload, download, and view images. <a href="https://dampson18.github.io/wordeditor/">View Project</a></p>
+        </div>
+		<div>
+            <img src="shop.png" alt="Project 4">
+            <h3>Mini Shop Receipt Generation App</h3>
+            <p>A simple shop app for shop owner use. It generates receipts and after purchase. <a href="https://dampson18.github.io/shop/">View Project</a></p>
+        </div>
+        <!-- Add more projects as needed -->
+    </section>
+
+<section id="about" class="about">
+    <h2>About Me</h2>
+    <div class="profile-container">
+        <img id="profile-picture" src="KelvinDampson.jpg" alt="Kelvin Dampson">
+        <p class="about-me-text">As an enthusiastic individual, I am passionate about leveraging my technical skills 
+            and knowledge to contribute meaningfully to the world of technology. 
+            I am open to networking and exploring opportunities that align with my passion for technology and 
+            my commitment to making a positive impact.</p>
+    </div>
+</section>
+
+    
+    <h3>Fun Facts</h3>
+    <div class="fun-fact">
+        <div class="fact-item">
+            <img src="keyboardandbass.png" alt="Fun Fact 1">
+            <p>I’m passionate about music, and I love practicing both the keyboard and the bass guitar.</p>
+        </div>
+        <div class="fact-item">
+            <img src="mothercat.jpeg" alt="Fun Fact 2">
+            <p>I have a pet cat who has blessed me with multiple litters—she’s been a mother four times!</p>
+        </div>
+        <div class="fact-item">
+            <img src="anime.jpg" alt="Fun Fact 3">
+            <p>I’m a huge fan of Japanese anime and I enjoy watching them whenever I get the chance.</p>
+        </div>
+        <div class="fact-item">
+            <img src="giannis.jpeg" alt="Fun Fact 4">
+            <p>Giannis Antetokounmpo is one of my all-time favorite basketball players—I’m a big fan of his skills and determination.</p>
+        </div>
+    </div>
+</section>
+
+
+<section id="services" class="services">
+    <h2>Services Offered</h2>
+    <div class="service">
+        <img src="webdesign.jpg" alt="Service 1">
+        <h3>Web Development</h3>
+        <p>I design responsive and fully functional <strong>Websites</strong>.</p>
+    </div>
+    <div class="service">
+        <img src="app.jpg" alt="Service 2">
+        <h3>App Development</h3>
+        <p>I develop <strong>Apps</strong> that are good to go!</p>
+    </div>
+    <div class="service">
+        <img src="tech.png" alt="Service 3">
+        <h3>Tech Solutions</h3>
+        <p>I solve <strong>Tech</strong> Related issues of any kind.</p>
+    </div>
+    <div class="service">
+        <img src="flyer.jpg" alt="Service 4">
+        <h3>Flyer Designs</h3>
+        <p>I design realistic <strong>Flyers</strong> which are good to go.</p>
+    </div>
+    <div class="service">
+        <img src="youtube.png" alt="Service 5">
+        <h3>Coding Lessons</h3>
+        <p>I offer online coding lessons in various languages including <strong>Python</strong>, <strong>HTML/CSS</strong>, <strong>JavaScript</strong>, and more. Whether you're a beginner or looking to enhance your skills, I can help!</p>
+        <button onclick="window.location.href='https://www.youtube.com/@coplanartech4546'">Visit My YouTube Channel</button>
+    </div>
+	<!-- add more services -->
+</section>
+
+
+<section id="testimonials" class="testimonials">
+    <h2>Testimonials</h2>
+    <div class="testimonial-carousel">
+        <div class="testimonial-slide">
+            <img src="jeff.jpg" alt="Jeffery Baffour">
+            <blockquote>"This platform has exceeded my expectations. The attention to detail and professionalism are unmatched!"</blockquote>
+            <p>- Jeffery Baffour</p>
+        </div>
+        <div class="testimonial-slide">
+            <img src="sharon.jpg" alt="Sharon Dampson">
+            <blockquote>"An incredible experience! The team is highly skilled and truly understands the needs of its clients."</blockquote>
+            <p>- Sharon Dampson</p>
+        </div>
+        <div class="testimonial-slide">
+            <img src="quan.jpg" alt="Michael Quan">
+            <blockquote>"I am thoroughly impressed with the results. This is the kind of service that keeps me coming back!"</blockquote>
+            <p>- Michael Quan</p>
+        </div>
+    </div>
+
+</section>
+
+
+    <section id="resume" class="resume">
+        <h2>Download My Resume</h2>
+        <p>Click the button below to download my resume:</p>
+        <a href="KelvinDampsonCV.docx" class="download-button" download>Download Resume</a> <!-- Resume download link -->
+    </section>
+
+<section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit" class="cta-button">Send Message</button>
+    </form>
+    <p>Email: <a href="mailto:kelvinfaraday15@gmail.com">kelvinfaraday15@gmail.com</a></p>
+</section>
+
+
+<footer>
+    <p>&copy; 2024 Kelvin Dampson. All Rights Reserved.</p>
+    <a href="https://wa.me/233204242615" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://t.me/ComputerBasicswithKelvin_Youtube" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
+    <a href="https://www.facebook.com/kelvin.dampson.3" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+    <a href="tel:+233204242615" title="Phone"><i class="fas fa-mobile-alt"></i></a>
+</footer>
+<button onclick="scrollToTop()" style="position: fixed; bottom: 20px; right: 20px; background-color: #4CAF50; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px;">
+  Back to Top
+</button>
+
+
+
+<script>
+// Initialize EmailJS with your Public API Key
+emailjs.init('KBzrXsKlJPofF9Q9Y'); // Replace 'YOUR_PUBLIC_API_KEY' with your actual public key
+
+// Handle the form submission
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+    
+    // Get form values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    // Send email using EmailJS
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+        from_name: name,
+        from_email: email,
+        message: message
+    })
+    .then(function(response) {
+        console.log('Email sent successfully', response);
+        alert('Thank you for your message! We will get back to you soon.');
+        document.getElementById('contactForm').reset(); // Reset the form fields
+    }, function(error) {
+        console.error('Failed to send email', error);
+        alert('Oops! Something went wrong, please try again later.');
+    });
+});
+
+
+
+  // Function to scroll to the top of the page
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+</script>
+
+</body>
+</html>
