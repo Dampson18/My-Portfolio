@@ -448,10 +448,10 @@ nav a:hover {
     <h2>About Me</h2>
     <div class="profile-container">
         <img id="profile-picture" src="KelvinDampson.jpg" alt="Kelvin Dampson">
-        <p class="about-me-text">As a tech enthusiast, I thrive on the thrill of innovation and the endless possibilities it brings. 
+        <p class="about-me-text">As a tech enthusiast, I thrive on the thrill of innovation and its endless possibilities. 
 		My passion for technology drives me to harness my skills and knowledge to create meaningful solutions that have a real impact. 
 		I believe in the power of collaboration and am always eager to connect with like-minded individuals. 
-		Together, we can explore exciting opportunities that not only fuel my love for technology but also contribute positively to the world around us.</p>
+		Together, we can explore exciting opportunities that fuel my love for technology and contribute positively to the world around us.</p>
     </div>
 </section>
 
@@ -529,17 +529,17 @@ nav a:hover {
         <div class="testimonial-carousel">
             <div class="testimonial-slide">
                 <img src="jeff.jpg" alt="Jeffery Baffour">
-                <blockquote>"This platform has exceeded my expectations. The attention to detail and professionalism are unmatched!"</blockquote>
+                <blockquote>"He designs topnotch websites and user interfaces"</blockquote>
                 <p>- Jeffery Baffour</p>
             </div>
             <div class="testimonial-slide">
                 <img src="sharon.jpg" alt="Sharon Dampson">
-                <blockquote>"An incredible experience! The team is highly skilled and truly understands the needs of its clients."</blockquote>
+                <blockquote>"This developer is highly skilled and truly understands the needs of his clients."</blockquote>
                 <p>- Sharon Dampson</p>
             </div>
             <div class="testimonial-slide">
                 <img src="quan.jpg" alt="Michael Quan">
-                <blockquote>"I am thoroughly impressed with the results. This is the kind of service that keeps me coming back!"</blockquote>
+                <blockquote>"I am thoroughly impressed with the results of his works. This is the kind of service that keeps me coming back!"</blockquote>
                 <p>- Michael Quan</p>
             </div>
         </div>
@@ -583,9 +583,11 @@ nav a:hover {
 </button>
 
 <script>
-let index = 0;
+let autoSlide = setInterval(() => moveSlide(1), 5000);
 
 function moveSlide(direction) {
+    clearInterval(autoSlide); // Stop the current auto-slide
+    
     const carousel = document.querySelector('.testimonial-carousel');
     const slides = document.querySelectorAll('.testimonial-slide');
     const totalSlides = slides.length;
@@ -600,10 +602,10 @@ function moveSlide(direction) {
 
     const offset = -index * 100;
     carousel.style.transform = `translateX(${offset}%)`;
+
+    autoSlide = setInterval(() => moveSlide(1), 5000); // Restart auto-slide
 }
 
-// Auto-slide every 5 seconds
-setInterval(() => moveSlide(1), 5000);
 
 </script>
 
