@@ -583,11 +583,9 @@ nav a:hover {
 </button>
 
 <script>
-let autoSlide = setInterval(() => moveSlide(1), 5000);
+let index = 0;
 
 function moveSlide(direction) {
-    clearInterval(autoSlide); // Stop the current auto-slide
-    
     const carousel = document.querySelector('.testimonial-carousel');
     const slides = document.querySelectorAll('.testimonial-slide');
     const totalSlides = slides.length;
@@ -602,9 +600,10 @@ function moveSlide(direction) {
 
     const offset = -index * 100;
     carousel.style.transform = `translateX(${offset}%)`;
-
-    autoSlide = setInterval(() => moveSlide(1), 5000); // Restart auto-slide
 }
+
+// Auto-slide every 5 seconds
+let autoSlide = setInterval(() => moveSlide(1), 5000);
 
 
 </script>
