@@ -196,17 +196,17 @@ nav a:hover {
 /* Skills Section */
 .skills {
     text-align: center;
-    padding: 20px; /* Reduced padding for mobile */
+    padding: 20px; /* Padding */
     background-color: #eaf6f6; /* Soft background color */
     border-radius: 10px;
-    margin: 20px 0; /* Reduced margin for mobile */
+    margin: 20px 0; /* Margin */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .skills h3 {
-    font-size: 2.5em; /* Reduced font size for mobile */
-    margin-bottom: 20px; /* Reduced margin for mobile */
-    color: green; /* Darker color for better contrast */
+    font-size: 3em; /* Increased font size */
+    margin-bottom: 20px; /* Margin */
+    color: green; /* Contrast color */
     font-family: 'Arial', sans-serif;
 }
 
@@ -214,53 +214,58 @@ nav a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: 20px; /* Reduced gap for mobile */
+    gap: 20px; /* Gap */
 }
 
 /* Each individual skill item */
 .skill-item {
-    width: 100%; /* Full width on mobile */
-    max-width: 300px; /* Limit width for larger screens */
+    width: 100%; /* Full width */
+    max-width: 300px; /* Limit width */
     text-align: left;
     background-color: #ffffff;
-    padding: 15px; /* Reduced padding for mobile */
+    padding: 15px; /* Padding */
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
-    margin: 10px; /* Added margin for spacing */
+    margin: 10px; /* Margin */
 }
 
 .skill-item:hover {
-    transform: scale(1.05); /* Slightly enlarge on hover */
+    transform: scale(1.05); /* Hover effect */
 }
 
 .skill-item h4 {
     margin-top: 0;
-    font-size: 1.5em; /* Reduced font size for mobile */
-    color: #2980b9; /* Blue color for headings */
+    font-size: 2em; /* Increased font size */
+    color: #2980b9; /* Blue color */
     font-family: 'Arial', sans-serif;
 }
 
 .skill-item p {
-    margin-top: 10px; /* Reduced margin for mobile */
-    font-size: 1em; /* Reduced font size for mobile */
+    margin-top: 10px; /* Margin */
+    font-size: 1.2em; /* Increased font size */
     color: #555;
 }
 
 /* Skill bars */
 .skill-bar {
     margin-top: 10px;
-    background-color: #dcdcdc; /* Light grey background for the bar */
+    background-color: #dcdcdc; /* Light grey */
     border-radius: 5px;
-    height: 15px; /* Reduced height for mobile */
+    height: 15px; /* Height */
     width: 100%;
 }
 
 .skill-progress {
     height: 100%;
     border-radius: 5px;
-    background-color: #3498db; /* Blue for the progress */
-    transition: width 0.5s ease; /* Smooth transition for the width */
+    background-color: #3498db; /* Blue */
+    transition: width 0.5s ease; /* Transition */
+}
+
+/* Example usage of skill bars */
+.skill-item .skill-label {
+    font-weight: bold;
 }
 
 /* Example usage of skill bars */
@@ -293,9 +298,9 @@ nav a:hover {
 }
 
 .testimonial-carousel-wrapper {
-    overflow: hidden;
+    overflow: hidden; /* Hides overflow */
     width: 100%;
-    max-width: 600px; /* Adjust for responsiveness */
+    max-width: 600px; /* Responsive max width */
     margin: auto;
     position: relative;
 }
@@ -306,20 +311,29 @@ nav a:hover {
 }
 
 .testimonial-slide {
-    flex: 0 0 100%;
+    flex: 0 0 100%; /* Each slide takes full width */
     padding: 20px;
     background: #ffffff;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    position: relative; /* Allows for absolute positioning of inner elements */
 }
 
 .testimonial-slide img {
     width: 100%;
-    max-height: 350px;
+    max-height: 350px; /* Limit height */
     border-radius: 10px;
     border: 4px solid #3498db;
-    object-fit: cover;
+    object-fit: cover; /* Maintains aspect ratio */
+    display: block; /* Ensures block layout */
+    margin: 0 auto; /* Centers the image */
+}
+
+.testimonial-slide p {
+    margin-top: 15px; /* Space between image and text */
+    font-size: 1.2em; /* Increase font size for readability */
+    color: #333; /* Darker text for contrast */
 }
 
 .carousel-button {
