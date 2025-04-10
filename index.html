@@ -53,7 +53,7 @@ nav a:hover {
     border-radius: 5px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
-    padding: 10px 15px; /* Added padding for a better clickable area */
+    
 }
         .container {
             width: 90%;
@@ -87,7 +87,7 @@ nav a:hover {
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
         }
-        .cta-button, .download-button {
+        .cta-button, .download-button, .certification-link {
             display: inline-block;
             padding: 10px 20px;
             background: #3498db; /* Primary blue button */
@@ -97,7 +97,7 @@ nav a:hover {
             margin-top: 10px;
             transition: background 0.3s, transform 0.2s;
         }
-        .cta-button:hover, .download-button:hover {
+        .cta-button:hover, .download-button:hover, .certification-link:hover {
             background: #2980b9; /* Darker blue on hover */
             transform: scale(1.05); /* Slight grow effect */
         }
@@ -379,6 +379,13 @@ nav a:hover {
         }
 		
 
+#certifications p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+
 
     </style>
 </head>
@@ -394,6 +401,7 @@ nav a:hover {
         <a href="#testimonials">Testimonials</a>
         <a href="#resume">Resume</a>
         <a href="#contact">Contact</a>
+		<a href="#certifications">Certifications</a>
     </nav>
 </header>
 
@@ -563,6 +571,13 @@ nav a:hover {
     </div>
 </section>
 
+<section id="certifications">
+  <div class="section-content">
+    <h2>Certifications</h2>
+    <p>Here are the certifications I have earned, showcasing my skills and expertise in various fields. Click the link below to explore the details of each certification.</p>
+    <a href="certifications.html" class="certification-link">View My Certifications</a>
+  </div>
+</section>
 
 
     <section id="resume" class="resume">
