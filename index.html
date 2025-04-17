@@ -527,10 +527,10 @@ nav a:hover {
 <body>
 
 <header>
-    <div class="hamburger" onclick="toggleMenu()">
+    <div class="hamburger" onclick="toggleMenu()" >
         &#9776; <!-- Hamburger icon -->
     </div>
-    <nav id="navMenu">
+    <nav id="navMenu" >
         <a href="#about">About Me</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#services">Services</a>
@@ -818,16 +818,14 @@ document.getElementById('contactForm').addEventListener('submit', function(event
   }
   
   
-  //hamburger menu
-document.addEventListener("DOMContentLoaded", function () {
-    const hamburger = document.querySelector(".hamburger");
-    const nav = document.querySelector("#navMenu"); // Corrected selector
 
-    hamburger.addEventListener("click", function () {
-        console.log("Hamburger clicked"); // Debugging
-        nav.classList.toggle("show");
-    });
-});
+// JavaScript to toggle the navigation menu
+function toggleMenu() {
+    const nav = document.querySelector("#navMenu"); // Get the navigation element
+    nav.classList.toggle("show"); // Toggle the 'show' class to display the menu
+}
+
+
 
 
 
