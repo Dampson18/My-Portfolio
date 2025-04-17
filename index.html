@@ -56,17 +56,23 @@ header h1 {
 header p {
     font-size: 1.5rem;
     margin-bottom: 30px;
+    padding: 10px; /* Adds some space inside the border */
+    border: 2px solid #ecf0f1; /* Adds a border around the text */
+    border-radius: 5px; /* Optional: makes the corners rounded */
+    display: inline-block; /* Keeps the text's dimensions only to the content area */
+    color: #ecf0f1; /* Text color */
 }
+
 
 /* === Navigation Styling === */
 nav {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end; /* Aligns items to the right */
+    justify-content: flex-end;
     gap: 15px;
     position: absolute;
     top: 20px;
-    right: 20px; /* Position to the right of the screen */
+    right: 20px;
     z-index: 2;
 }
 
@@ -85,32 +91,61 @@ nav a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Hamburger icon (visible on mobile) */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    color: #ecf0f1;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 3;
+}
+
 /* === Responsive Styling for Phones === */
 @media (max-width: 768px) {
-    header {
-        padding: 0 10px;
+    /* Hamburger menu visible on mobile */
+    .hamburger {
+        display: block;
     }
 
-    header h1 {
-        font-size: 2rem;
-    }
-
-    header p {
-        font-size: 1.1rem;
-    }
-
+    /* Mobile navigation menu styling */
     nav {
+        display: none; /* Hidden by default on mobile */
         flex-direction: column;
         align-items: center;
-        gap: 10px;
-        top: 10px;
+        background-color: rgba(44, 62, 80, 0.95); /* Slightly transparent dark */
+        position: absolute;
+        top: 60px; /* Adjust the top positioning */
+        right: 10px; /* Adjust the right positioning */
+        width: 80%; /* Adjust the width */
+        max-width: 300px; /* Control the maximum width */
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        z-index: 2; /* Ensure it's above other elements */
     }
 
     nav a {
-        padding: 8px 12px;
-        font-size: 0.95rem;
+        font-size: 1.2rem; /* Slightly larger font on mobile */
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Show nav menu when 'show' class is added */
+    nav.show {
+        display: flex;
+    }
+
+    /* Adjust header padding to leave space for the hamburger menu */
+    header {
+        padding-top: 80px;
     }
 }
+
+
 
 
         .container {
@@ -492,19 +527,22 @@ nav a:hover {
 <body>
 
 <header>
-    <nav>
+    <div class="hamburger" onclick="toggleMenu()">
+        &#9776; <!-- Hamburger icon -->
+    </div>
+    <nav id="navMenu">
         <a href="#about">About Me</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#services">Services</a>
         <a href="#testimonials">Testimonials</a>
         <a href="#resume">Resume</a>
         <a href="#contact">Contact</a>
-		<a href="#certifications">Certifications</a>
+        <a href="#certifications">Certifications</a>
     </nav>
     <h1>Kelvin Dampson</h1>
     <p>Frontend Developer</p>
-
 </header>
+
 
 <div class="container">
 
@@ -778,6 +816,22 @@ document.getElementById('contactForm').addEventListener('submit', function(event
       behavior: 'smooth'
     });
   }
+  
+  
+  //hamburger menu
+document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.querySelector(".hamburger");
+    const nav = document.querySelector("#navMenu"); // Corrected selector
+
+    hamburger.addEventListener("click", function () {
+        console.log("Hamburger clicked"); // Debugging
+        nav.classList.toggle("show");
+    });
+});
+
+
+
+
 </script>
 
 </body>
