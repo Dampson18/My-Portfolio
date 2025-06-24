@@ -897,11 +897,19 @@
                 font-size: 1em;
                 padding: 20px;
             }
-            .skills-grid, .projects-grid, .services-grid {
+            .skills-grid, .services-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
                 padding: 0 15px;
             }
+            /* ** Crucial Fix for Portfolio Grid on small screens ** */
+            .projects-grid {
+                grid-template-columns: 1fr; /* Force single column on tiny screens */
+                gap: 20px;
+                padding: 0 15px;
+                overflow-x: hidden; /* Ensure no horizontal overflow */
+            }
+
             .skill-item, .project-card, .service-card {
                 padding: 20px;
             }
@@ -989,7 +997,7 @@
             <div class="profile-card">
                 <img id="profile-picture" src="KelvinDampson.jpg" alt="Kelvin Dampson, Frontend Developer">
                 <div class="about-text-content">
-                    <p>As a **tech enthusiast** based in Ghana, I thrive on the thrill of innovation and its endless possibilities. My passion for technology drives me to harness my skills and knowledge to create meaningful solutions that have a real impact. I believe in the power of collaboration and am always eager to connect with like-minded individuals.</p>
+                    <p>As a tech enthusiast based in Ghana, I thrive on the thrill of innovation and its endless possibilities. My passion for technology drives me to harness my skills and knowledge to create meaningful solutions that have a real impact. I believe in the power of collaboration and am always eager to connect with like-minded individuals.</p>
                     <p>My journey in frontend development is fueled by a desire to build **intuitive and visually stunning web experiences**. I specialize in bringing designs to life with clean, efficient, and responsive code, ensuring every project is not just functional but also a delight to use. Let's build something amazing together!</p>
                 </div>
             </div>
@@ -1141,7 +1149,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="NextEdge.png" alt="NextEdge IT & Design Website Thumbnail">
+                    <img src="logo.png" alt="NextEdge IT & Design Website Thumbnail">
                     <div class="project-info">
                         <h3>NextEdge IT & Design (Business Site)</h3>
                         <p>A marketing website for an IT and design organization, showcasing services like web design, IT solutions, and graphic design.</p>
@@ -1195,7 +1203,7 @@
                     <div class="testimonial-slide">
                         <img src="sharon.jpg" alt="Sharon Dampson profile picture">
                         <blockquote>"This developer is highly skilled and truly understands the needs of his clients. He transformed my vision into a beautiful, functional reality."</blockquote>
-                        <p class="client-name">- Sharon Dampson</p>
+                        <p class="client-name">- Sharon Eshun</p>
                     </div>
                     <div class="testimonial-slide">
                         <img src="quan.jpg" alt="Michael Quan profile picture">
