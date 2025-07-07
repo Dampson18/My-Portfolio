@@ -757,8 +757,9 @@ footer p {
 }
 
 @media (max-width: 768px) {
+    /* Mobile nav (hamburger) styles */
     nav {
-        display: flex;
+        display: flex; /* Ensure flex for column layout when open */
         flex-direction: column;
         width: 70%;
         max-width: 250px;
@@ -768,17 +769,19 @@ footer p {
         right: 0;
         height: 100%;
         padding-top: 80px;
-        transform: translateX(100%);
+        transform: translateX(100%); /* Start hidden off-screen */
         transition: transform 0.4s ease-out;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
     }
 
     nav.nav-open {
-        transform: translateX(0);
+        transform: translateX(0); /* Slide in when open */
     }
 
+    /* Important: Hide nav on mobile if not open, without relying on JS `display: none` */
+    /* This ensures it's not interactive or visible before it slides in */
     nav:not(.nav-open) {
-        display: none;
+        pointer-events: none;
     }
 
 
@@ -808,7 +811,7 @@ footer p {
     }
 
     .hamburger {
-        display: flex;
+        display: flex; /* Show hamburger on mobile */
     }
 
     .hero-section {
@@ -848,6 +851,13 @@ footer p {
     }
     .contact-form {
         padding: 25px;
+    }
+
+    /* Fallback for fade-in sections on mobile */
+    /* This ensures content is visible immediately, even if JS doesn't kick in */
+    .fade-in-section {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
