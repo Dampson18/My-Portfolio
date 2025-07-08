@@ -130,28 +130,50 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCarousel();
 
     // --- EmailJS Integration for Contact Form ---
-    // Initialize EmailJS with your Public API Key
-    emailjs.init("YOUR_PUBLIC_API_KEY"); // Replace with your actual Public API Key from EmailJS
+// Initialize EmailJS with your Public API Key
+emailjs.init("KBzrXsKlJPofF9Q9Y"); // IMPORTANT: Replace with your actual Public API Key from EmailJS
 
-    const contactForm = document.getElementById('contactForm');
+const contactForm = document.getElementById('contactForm');
 
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
+if (contactForm) {
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
 
-            const serviceID = "YOUR_SERVICE_ID"; // Replace with your actual Service ID
-            const templateID = "YOUR_TEMPLATE_ID"; // Replace with your actual Template ID
+        const serviceID = "service_xwbbdjs";   // IMPORTANT: Replace with your actual Service ID from EmailJS
+        const templateID = "template_ktkt0fq"; // IMPORTANT: Replace with your actual Template ID from EmailJS
 
-            emailjs.sendForm(serviceID, templateID, this)
-                .then(() => {
-                    alert('Your message has been sent successfully!');
-                    contactForm.reset(); // Clear the form fields
-                }, (error) => {
-                    console.error('Failed to send message:', error);
-                    alert('Oops! Something went wrong. Please try again later.');
-                });
+        // Get current date and time for the email
+        const now = new Date();
+        const submissionTime = now.toLocaleString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            hour12: true // Use 12-hour format with AM/PM
         });
-    } else {
-        console.error("Contact form with ID 'contactForm' not found.");
-    }
-});
+
+        // Collect all form data using FormData and add the submission time
+        const formData = new FormData(this); // 'this' refers to the form element itself
+        const templateParams = {
+            from_name: formData.get('from_name'),
+            from_email: formData.get('from_email'),
+            subject: formData.get('subject'),
+            message: formData.get('message'),
+            submission_time: submissionTime // Add the generated submission time
+        };
+
+        // Send the email using emailjs.send with the custom parameters
+        emailjs.send(serviceID, templateID, templateParams)
+            .then(() => {
+                alert('Your message has been sent successfully!');
+                contactForm.reset(); // Clear all form fields after successful submission
+            }, (error) => {
+                console.error('Failed to send message:', error);
+                alert('Oops! Something went wrong. Please try again later.');
+            });
+    });
+} else {
+    // This error will show in the console if the form with ID 'contactForm' isn't found in your HTML
+    console.error("Contact form with ID 'contactForm' not found.");
+}
