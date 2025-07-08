@@ -99,7 +99,7 @@ section:hover {
 
 /* --- Hero Section (Header) --- */
 .hero-section {
-    background: url('portfolio_bg.jpg') center center / cover no-repeat;
+    background: #f3815a url('portfolio_bg.jpg') center center / cover no-repeat;
     position: relative;
     color: var(--text-light);
     height: 100vh;
