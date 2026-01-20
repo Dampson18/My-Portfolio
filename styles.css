@@ -55,7 +55,7 @@
     inset: -15px;
     border-radius: 50%;
     border: 15px solid #514b82; /* you can change color */
-    animation: l18 2s infinite linear;
+    animation: l18 4s infinite linear;
 }
 
 @keyframes l18 {
