@@ -156,7 +156,7 @@ nav {
 
 nav ul {
     display: flex;
-    gap: 25px;
+    gap: 0px;
 }
 
 nav a {
