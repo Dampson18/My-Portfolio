@@ -773,6 +773,8 @@ footer p {
         transform: translateX(100%); /* Start hidden off-screen */
         transition: transform 0.4s ease-out;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+        overflow-y: auto;                /* Scroll if content is taller than screen */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
     }
 
     nav.nav-open {
