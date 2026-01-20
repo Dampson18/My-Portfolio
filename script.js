@@ -1,3 +1,16 @@
+//Loader
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    preloader.style.opacity = '0';
+    preloader.style.transition = 'opacity 0.5s ease-out';
+
+    setTimeout(() => {
+        preloader.style.display = 'none';
+    }, 500); // fade out smoothly
+});
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     // --- Smooth Scrolling for Navigation Links ---
     document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
