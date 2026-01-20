@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault(); // Prevent default form submission
 
             const serviceID = "service_xwbbdjs";   // IMPORTANT: Replace with your actual Service ID from EmailJS
-            const templateID = "template_ktkt0fq"; // IMPORTANT: Replace with your actual Template ID from EmailJS
+            const templateID = "template_nzfuakh"; // IMPORTANT: Replace with your actual Template ID from EmailJS
 
             // Get current date and time for the email
             const now = new Date();
