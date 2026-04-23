@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Close mobile menu if open
                 const nav = document.getElementById('main-nav');
                 const hamburger = document.getElementById('hamburger-menu');
-                if (nav && hamburger && nav.classList.contains('nav-open')) { // Added checks for existence
+                if (nav && hamburger && nav.classList.contains('nav-open')) {
                     nav.classList.remove('nav-open');
                     hamburger.classList.remove('open');
                 }
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburgerMenu = document.getElementById('hamburger-menu');
     const mainNav = document.getElementById('main-nav');
 
-    if (hamburgerMenu && mainNav) { // Added checks for existence
+    if (hamburgerMenu && mainNav) {
         hamburgerMenu.addEventListener('click', () => {
             if (mainNav.classList.contains('nav-open')) {
                 mainNav.classList.remove('nav-open');
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Scroll-to-Top Button Functionality ---
     const scrollToTopBtn = document.getElementById('scrollToTopBtn');
 
-    if (scrollToTopBtn) { // Added check for existence
+    if (scrollToTopBtn) {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) { // Show button after scrolling 300px
                 scrollToTopBtn.classList.add('show');
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Fade-in on Scroll Animation (Intersection Observer) ---
     const fadeInSections = document.querySelectorAll('.fade-in-section');
 
-    if (fadeInSections.length > 0) { // Added check for existence
+    if (fadeInSections.length > 0) {
         const observerOptions = {
             root: null, // relative to the viewport
             rootMargin: '0px',
@@ -126,7 +126,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const rightButton = document.querySelector('.carousel-button.right');
     let currentIndex = 0;
 
-    // Added checks for existence of all crucial carousel elements
     if (carousel && slides.length > 0 && leftButton && rightButton) {
         function updateCarousel() {
             const offset = -currentIndex * 100;
@@ -200,8 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
         });
     } else {
-        // This error will show in the console if the form with ID 'contactForm' isn't found in your HTML
         console.error("Contact form with ID 'contactForm' not found. EmailJS will not be active.");
     }
 
-}); // THIS IS THE CRUCIAL MISSING CLOSING BRACE FOR DOMContentLoaded
+});
