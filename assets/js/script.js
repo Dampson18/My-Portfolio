@@ -21,10 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetElement = document.querySelector(targetId);
 
             if (targetElement) {
-                // Calculate offset for fixed header if needed, or simply scroll to view
-                const offset = 70; // Adjust this value if you have a fixed header
+                // Calculate offset for fixed header
+                const navbarHeight = document.getElementById('navbar').offsetHeight;
+                const offset = navbarHeight;
                 const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - offset;
+                const offsetPosition = elementPosition + window.scrollY - offset;
 
                 window.scrollTo({
                     top: offsetPosition,
@@ -42,6 +43,16 @@ document.addEventListener('DOMContentLoaded', () => {
                  console.warn(`Smooth scroll target not found: ${targetId}`);
             }
         });
+    });
+
+    // --- Fixed Navbar Scroll Effect ---
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
     });
 
     // --- Mobile Navigation Toggle ---
