@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Other Projects | Kelvin Dampson</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f4f6f9;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #e5e7eb;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 5px;
+}
+
+/* Header */
+.projects-header {
+    text-align: center;
+    padding: 90px 20px 60px;
+    background: #111827;
+    position: relative;
+}
+
+.back-link {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    color: #d1d5db;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 8px 18px;
+    border: 1px solid #374151;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.back-link:hover {
+    background: #374151;
+    color: #ffffff;
+}
+
+.projects-header h1 {
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.projects-header p {
+    color: #9ca3af;
+    font-size: 1rem;
+}
+
+/* Container */
+.projects-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+/* Project Cards */
+.project-item {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 18px;
+    border-left: 3px solid #6b7280;
+    transition: 0.25s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.project-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.project-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+.project-description {
+    font-size: 0.95rem;
+    color: #6b7280;
+}
+
+/* Link (simple, no icon) */
+.project-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: #374151;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: 0.2s;
+}
+
+.project-link:hover {
+    border-bottom: 1px solid #374151;
+}
+
+/* Footer */
+.projects-footer {
+    text-align: center;
+    padding: 50px 20px;
+    background: #111827;
+}
+
+.back-to-top {
+    color: #d1d5db;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #374151;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.back-to-top:hover {
+    background: #374151;
+    color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .projects-header h1 {
+        font-size: 2rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+<div class="projects-header">
+    <a href="https://dampson18.github.io/My-Portfolio/" class="back-link">Back</a>
+    <h1>Other Projects</h1>
+    <p>Selected work and experiments</p>
+</div>
+
+<!-- Projects -->
+<div class="projects-container">
+
+    <div class="project-item">
+        <h3 class="project-title">Project Title Placeholder</h3>
+        <p class="project-description">Project description placeholder. Replace with actual project details later.</p>
+        <a href="#" class="project-link">View Project</a>
+    </div>
+
+    <div class="project-item">
+        <h3 class="project-title">Project Title Placeholder</h3>
+        <p class="project-description">Project description placeholder. Replace with actual project details later.</p>
+        <a href="#" class="project-link">View Project</a>
+    </div>
+
+    <div class="project-item">
+        <h3 class="project-title">Project Title Placeholder</h3>
+        <p class="project-description">Project description placeholder. Replace with actual project details later.</p>
+        <a href="#" class="project-link">View Project</a>
+    </div>
+
+    <div class="project-item">
+        <h3 class="project-title">Project Title Placeholder</h3>
+        <p class="project-description">Project description placeholder. Replace with actual project details later.</p>
+        <a href="#" class="project-link">View Project</a>
+    </div>
+
+    <div class="project-item">
+        <h3 class="project-title">Project Title Placeholder</h3>
+        <p class="project-description">Project description placeholder. Replace with actual project details later.</p>
+        <a href="#" class="project-link">View Project</a>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<div class="projects-footer">
+    <a href="#" class="back-to-top" id="backToTop">Back to Top</a>
+</div>
+
+<script>
+document.getElementById('backToTop').addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+
+</body>
+</html>
