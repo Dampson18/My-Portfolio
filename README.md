@@ -1,11 +1,14 @@
 # My-Portfolio - Kelvin Dampson
 
 ## Project Overview
-This is the personal portfolio of Kelvin Dampson, a dedicated Frontend Developer based in Ghana. The portfolio showcases various web development projects, skills, services, and certifications, providing an intuitive and engaging experience for visitors.
+This is the personal portfolio of Kelvin Dampson, a web developer based in Ghana. It presents selected web projects, a broader project archive, skills, services, and contact details in a responsive, developer-inspired interface.
 
 ## Features
 - **Responsive Design:** Optimized for various devices and screen sizes.
 - **Interactive Project Showcase:** Highlights a variety of web applications and designs.
+- **Project Archive:** A dedicated page with searchable projects and category filters.
+- **Theme Switcher:** Persistent dark/light theme preference across both pages.
+- **Developer-Inspired UI:** Code-editor hero panel, stack overview, and terminal-inspired accents.
 - **Smooth Navigation:** Easy access to different sections with smooth scrolling.
 - **Contact Form:** Integrated with EmailJS for direct communication.
 - **Testimonial Carousel:** Displays feedback from clients.

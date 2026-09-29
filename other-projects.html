@@ -1,210 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Other Projects | Kelvin Dampson</title>
-
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background: #f4f6f9;
-    color: #1f2937;
-    line-height: 1.6;
-}
-
-/* Scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: #e5e7eb;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #4b5563;
-    border-radius: 5px;
-}
-
-/* Header */
-.projects-header {
-    text-align: center;
-    padding: 90px 20px 60px;
-    background: #111827;
-    position: relative;
-}
-
-.back-link {
-    position: absolute;
-    top: 25px;
-    left: 25px;
-    color: #d1d5db;
-    text-decoration: none;
-    font-size: 0.95rem;
-    padding: 8px 18px;
-    border: 1px solid #374151;
-    border-radius: 25px;
-    transition: 0.3s;
-}
-
-.back-link:hover {
-    background: #374151;
-    color: #ffffff;
-}
-
-.projects-header h1 {
-    font-size: 2.8rem;
-    color: #ffffff;
-    margin-bottom: 10px;
-}
-
-.projects-header p {
-    color: #9ca3af;
-    font-size: 1rem;
-}
-
-/* Container */
-.projects-container {
-    max-width: 900px;
-    margin: auto;
-    padding: 50px 20px;
-}
-
-/* Project Cards */
-.project-item {
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 25px;
-    margin-bottom: 18px;
-    border-left: 3px solid #6b7280;
-    transition: 0.25s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-}
-
-.project-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
-
-.project-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #111827;
-    margin-bottom: 10px;
-}
-
-.project-description {
-    font-size: 0.95rem;
-    color: #6b7280;
-}
-
-/* Link (simple, no icon) */
-.project-link {
-    display: inline-block;
-    margin-top: 12px;
-    color: #374151;
-    font-size: 0.9rem;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: 0.2s;
-}
-
-.project-link:hover {
-    border-bottom: 1px solid #374151;
-}
-
-/* Footer */
-.projects-footer {
-    text-align: center;
-    padding: 50px 20px;
-    background: #111827;
-}
-
-.back-to-top {
-    color: #d1d5db;
-    text-decoration: none;
-    padding: 10px 20px;
-    border: 1px solid #374151;
-    border-radius: 25px;
-    transition: 0.3s;
-}
-
-.back-to-top:hover {
-    background: #374151;
-    color: #ffffff;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .projects-header h1 {
-        font-size: 2rem;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse web apps, websites, and design experiments by Kelvin Dampson.">
+    <meta name="theme-color" content="#0b0f14">
+    <title>Project Archive | Kelvin Dampson</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
-<body>
-
-<!-- Header -->
-<div class="projects-header">
-    <a href="https://dampson18.github.io/My-Portfolio/" class="back-link">Back</a>
-    <h1>Other Projects</h1>
-    <p>Selected work and experiments</p>
-</div>
-
-<!-- Projects -->
-<div class="projects-container">
-
-    <div class="project-item">
-        <h3 class="project-title">Project Title Placeholder</h3>
-        <p class="project-description">Project description placeholder. Replace with actual project details later.</p>
-        <a href="#" class="project-link">View Project</a>
-    </div>
-
-    <div class="project-item">
-        <h3 class="project-title">Project Title Placeholder</h3>
-        <p class="project-description">Project description placeholder. Replace with actual project details later.</p>
-        <a href="#" class="project-link">View Project</a>
-    </div>
-
-    <div class="project-item">
-        <h3 class="project-title">Project Title Placeholder</h3>
-        <p class="project-description">Project description placeholder. Replace with actual project details later.</p>
-        <a href="#" class="project-link">View Project</a>
-    </div>
-
-    <div class="project-item">
-        <h3 class="project-title">Project Title Placeholder</h3>
-        <p class="project-description">Project description placeholder. Replace with actual project details later.</p>
-        <a href="#" class="project-link">View Project</a>
-    </div>
-
-    <div class="project-item">
-        <h3 class="project-title">Project Title Placeholder</h3>
-        <p class="project-description">Project description placeholder. Replace with actual project details later.</p>
-        <a href="#" class="project-link">View Project</a>
-    </div>
-
-</div>
-
-<!-- Footer -->
-<div class="projects-footer">
-    <a href="#" class="back-to-top" id="backToTop">Back to Top</a>
-</div>
-
-<script>
-document.getElementById('backToTop').addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-</script>
-
+<body class="projects-page">
+    <header class="archive-nav"><a class="brand-mark" href="index.html"><span class="brand-bracket">&lt;</span>kd<span class="brand-bracket"> /&gt;</span></a><a class="back-home" href="index.html"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to portfolio</a><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme" title="Toggle color theme"><i class="fas fa-sun" aria-hidden="true"></i></button></header>
+    <main class="archive-main">
+        <div class="archive-intro"><p class="section-kicker">THE WORKBENCH / PROJECT ARCHIVE</p><h1>Things I’ve <span>built.</span></h1><p>A collection of client work, experiments, and useful little tools. Filter by type or search for something specific.</p><div class="archive-count"><span class="status-dot"></span><strong id="archive-count">14</strong> PROJECTS IN THE ARCHIVE</div></div>
+        <div class="project-toolbar" aria-label="Filter projects"><div class="project-filters" role="group" aria-label="Project categories"><button type="button" class="filter-chip is-active" data-filter="all" aria-pressed="true">All work</button><button type="button" class="filter-chip" data-filter="web" aria-pressed="false">Websites</button><button type="button" class="filter-chip" data-filter="apps" aria-pressed="false">Web apps</button><button type="button" class="filter-chip" data-filter="design" aria-pressed="false">Design</button></div><label class="project-search"><i class="fas fa-magnifying-glass" aria-hidden="true"></i><input type="search" id="project-search" placeholder="Search projects…" aria-label="Search projects"></label></div>
+        <div class="projects-grid archive-grid" id="all-projects-grid">
+            <article class="project-card" data-category="apps"><img src="assets/images/fraud.jpg" alt="PFIS fraud detection project" loading="lazy"><div class="project-info"><span class="project-type">WEB APP · FRAUD PREVENTION</span><h2>PFIS</h2><p>A mobile money fraud detection system designed to make digital transactions safer.</p><div class="project-tags"><span>JavaScript</span><span>Web app</span></div><a href="https://pfis-nine.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">Visit project <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></article>
+            <article class="project-card" data-category="apps"><img src="assets/images/quiz.jpg" alt="Bible quiz application" loading="lazy"><div class="project-info"><span class="project-type">WEB APP · COMMUNITY</span><h2>Bible Quiz</h2><p>An interactive quiz experience built to help a church youth group engage with biblical knowledge.</p><div class="project-tags"><span>JavaScript</span><span>Education</span></div><a href="https://dampson18.github.io/biblequiz.github.io/" target="_blank" rel="noopener noreferrer" class="project-link">Visit project <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></article>
+            <article class="project-card" data-category="apps"><img src="assets/images/todolist.jpeg" alt="Interactive to-do list" loading="lazy"><div class="project-info"><span class="project-type">WEB APP · PRODUCTIVITY</span><h2>Interactive To-Do List</h2><p>A lightweight task manager with add, delete, and mark-as-complete interactions.</p><div class="project-tags"><span>Vanilla JS</span><span>Productivity</span></div><a href="https://dampson18.github.io/todolist/" target="_blank" rel="noopener noreferrer" class="project-link">Visit project <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></article>
+            <article class="project-card" data-category="apps"><img src="assets/images/calculator.png" alt="Web calculator interface" loading="lazy"><div class="project-info"><span class="project-type">WEB APP · UTILITY</span><h2>Web Calculator</h2><p>A compact browser calculator for everyday arithmetic, designed around intuitive input.</p><div class="project-tags"><span>JavaScript</span><span>Utility</span></div><a href="https://dampson18.github.io/calculator/" target="_blank" rel="noopener noreferrer" class="project-link">Visit project <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></article>
+            <article class="project-card" data-category="apps"><img src="assets/images/splitscreen.jpg" alt="Split Screen reading experience" loading="lazy"><div class="project-info"><span class="project-type">WEB APP · EXPERIMENT</span><h2>Split Screen</h2><p>A book-inspired interface that makes comparing two text or content areas simple.</p><div class="project-tags"><span>JavaScript</span><span>UI experiment</span></div><a href="https://dampson18.github.io/splitscreen/" target="_blank" rel="noopener noreferrer" class="project-link">Visit project <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></article>
+            <article class="project-card" data-category="apps"><img src="assets/images/wordeditor.png" alt="Basic word editor" loading="lazy"><div class="project-info"><span class="project-type">WEB APP · PRODUCTIVITY</span><h2>Basic Word Editor</h2><p>A browser-based editor with essential formatting controls and a live document preview.</p><div class="project-tags"><span>JavaScript</span><span>Editor</span></div><a href="https://dampson18.github.io/wordeditor/" target="_blank" rel="noopener noreferrer" class="project-link">Visit project <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></article>
+            <article class="project-card" data-category="apps"><img src="assets/images/imagegallery.jpg" alt="Dynamic image gallery" loading="lazy"><div class="project-info"><span class="project-type">WEB APP · MEDIA</span><h2>Dynamic Image Gallery</h2><p>A responsive image gallery with category filtering and lightbox-style viewing.</p><div class="project-tags"><span>JavaScript</span><span>Gallery</span></div><a href="https://dampson18.github.io/imagegallery" target="_blank" rel="noopener noreferrer" class="project-link">Visit project <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></article>
+            <article class="project-card" data-category="apps"><img src="assets/images/shop.png" alt="Mini shop receipt app" loading="lazy"><div class="project-info"><span class="project-type">WEB APP · COMMERCE</span><h2>Mini Shop & Receipts</h2><p>A practical sales tool for shop owners to manage purchases and generate printable receipts.</p><div class="project-tags"><span>JavaScript</span><span>Commerce</span></div><a href="https://dampson18.github.io/shop/" target="_blank" rel="noopener noreferrer" class="project-link">Visit project <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></article>
+            <article class="project-card" data-category="apps"><img src="assets/images/temp.png" alt="Temperature converter" loading="lazy"><div class="project-info"><span class="project-type">WEB APP · UTILITY</span><h2>Temperature Converter</h2><p>Convert between Celsius, Fahrenheit, and Kelvin with immediate, synchronized results.</p><div class="project-tags"><span>JavaScript</span><span>Utility</span></div><a href="https://dampson18.github.io/temperatureconverter" target="_blank" rel="noopener noreferrer" class="project-link">Visit project <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></article>
+            <article class="project-card" data-category="web"><img src="assets/images/shop.jpg" alt="Ma Victory Market website" loading="lazy"><div class="project-info"><span class="project-type">WEBSITE · SMALL BUSINESS</span><h2>MA Victory Market</h2><p>A welcoming storefront website for a local provision shop, with products and contact details.</p><div class="project-tags"><span>Responsive</span><span>Business</span></div><a href="https://dampson18.github.io/MA-Victory-Market/" target="_blank" rel="noopener noreferrer" class="project-link">Visit project <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></article>
+            <article class="project-card" data-category="web"><img src="assets/images/logo.png" alt="NextEdge IT and Design website" loading="lazy"><div class="project-info"><span class="project-type">WEBSITE · AGENCY</span><h2>NextEdge IT &amp; Design</h2><p>A marketing site presenting web design, IT solutions, and creative services.</p><div class="project-tags"><span>Web design</span><span>Branding</span></div><a href="https://nextedge-lime.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">Visit project <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></article>
+            <article class="project-card" data-category="web"><img src="assets/images/biotech.jpg" alt="Biotech Diagnostic Services website" loading="lazy"><div class="project-info"><span class="project-type">WEBSITE · HEALTHCARE</span><h2>Biotech Diagnostic Services</h2><p>A responsive website highlighting diagnostic services and convenient home sampling.</p><div class="project-tags"><span>Responsive</span><span>Healthcare</span></div><a href="https://dampson18.github.io/biotech" target="_blank" rel="noopener noreferrer" class="project-link">Visit project <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></article>
+            <article class="project-card" data-category="web"><img src="assets/images/webdesign.jpg" alt="Home care website demo" loading="lazy"><div class="project-info"><span class="project-type">WEBSITE · SERVICES</span><h2>Home Care Website</h2><p>A clear and approachable web presence for a home care service.</p><div class="project-tags"><span>Responsive</span><span>Services</span></div><a href="https://dampson18.github.io/homecaredemo/" target="_blank" rel="noopener noreferrer" class="project-link">Visit project <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></article>
+            <article class="project-card" data-category="design"><img src="assets/images/graphics.jpg" alt="Graphic design portfolio samples" loading="lazy"><div class="project-info"><span class="project-type">DESIGN · VISUALS</span><h2>Graphic Design</h2><p>A selection of visual design work, including graphics and promotional assets.</p><div class="project-tags"><span>Graphic design</span><span>Creative</span></div><a href="https://dampson18.github.io/Graphics/" target="_blank" rel="noopener noreferrer" class="project-link">View collection <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></article>
+        </div>
+        <p class="project-empty" id="project-empty" hidden>No matching projects yet. Try another search.</p>
+        <div class="archive-cta"><p class="section-kicker">HAVE AN IDEA IN MIND?</p><h2>Let’s make it real.</h2><a class="cta-button" href="index.html#contact">Start a conversation <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
+    </main>
+    <footer class="archive-footer"><p>© <span class="current-year">2026</span> Kelvin Dampson. Built with care &amp; a lot of coffee.</p><a href="https://github.com/dampson18" target="_blank" rel="noopener noreferrer" aria-label="Kelvin on GitHub"><i class="fab fa-github" aria-hidden="true"></i></a></footer>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

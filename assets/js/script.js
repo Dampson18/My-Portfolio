@@ -1,6 +1,7 @@
 //Loader
 window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
+    if (!preloader) return;
     preloader.style.opacity = '0';
     preloader.style.transition = 'opacity 0.5s ease-out';
 
@@ -38,6 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (nav && hamburger && nav.classList.contains('nav-open')) { // Added checks for existence
                     nav.classList.remove('nav-open');
                     hamburger.classList.remove('open');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    hamburger.setAttribute('aria-label', 'Open navigation');
                 }
             } else {
                  console.warn(`Smooth scroll target not found: ${targetId}`);
@@ -47,13 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Fixed Navbar Scroll Effect ---
     const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+    }
 
     // --- Mobile Navigation Toggle ---
     const hamburgerMenu = document.getElementById('hamburger-menu');
@@ -61,12 +62,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (hamburgerMenu && mainNav) { // Added checks for existence
         hamburgerMenu.addEventListener('click', () => {
-            if (mainNav.classList.contains('nav-open')) {
-                mainNav.classList.remove('nav-open');
-                hamburgerMenu.classList.remove('open');
-            } else {
-                mainNav.classList.add('nav-open');
-                hamburgerMenu.classList.add('open');
+            const isOpen = mainNav.classList.toggle('nav-open');
+            hamburgerMenu.classList.toggle('open', isOpen);
+            hamburgerMenu.setAttribute('aria-expanded', String(isOpen));
+            hamburgerMenu.setAttribute('aria-label', `${isOpen ? 'Close' : 'Open'} navigation`);
+        });
+        hamburgerMenu.addEventListener('keydown', event => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                hamburgerMenu.click();
             }
         });
 
@@ -75,12 +79,78 @@ document.addEventListener('DOMContentLoaded', () => {
             if (window.innerWidth > 768) {
                 mainNav.classList.remove('nav-open');
                 hamburgerMenu.classList.remove('open');
+                hamburgerMenu.setAttribute('aria-expanded', 'false');
+                hamburgerMenu.setAttribute('aria-label', 'Open navigation');
                 mainNav.style.display = '';
             }
         });
-    } else {
-        console.error("Hamburger menu or main navigation elements not found. Mobile navigation might not work correctly.");
     }
+
+    // --- Persistent color theme ---
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        let savedTheme = 'dark';
+        try { savedTheme = localStorage.getItem('kelvin-theme') || 'dark'; } catch (error) { /* Storage may be unavailable in private browsing. */ }
+        document.body.dataset.theme = savedTheme;
+        const updateThemeButton = () => {
+            const isLight = document.body.dataset.theme === 'light';
+            themeToggle.innerHTML = `<i class="fas fa-${isLight ? 'moon' : 'sun'}" aria-hidden="true"></i>`;
+            themeToggle.setAttribute('aria-label', `Switch to ${isLight ? 'dark' : 'light'} theme`);
+        };
+        updateThemeButton();
+        themeToggle.addEventListener('click', () => {
+            document.body.dataset.theme = document.body.dataset.theme === 'light' ? 'dark' : 'light';
+            try { localStorage.setItem('kelvin-theme', document.body.dataset.theme); } catch (error) { /* Theme still works for this page view. */ }
+            updateThemeButton();
+        });
+    }
+
+    // --- Project filtering and search (homepage and project archive) ---
+    const projectCards = Array.from(document.querySelectorAll('.projects-grid .project-card'));
+    const filterButtons = document.querySelectorAll('.filter-chip');
+    const projectSearch = document.getElementById('project-search');
+    const emptyProjects = document.getElementById('project-empty');
+    const archiveCount = document.getElementById('archive-count');
+    if (projectCards.length && filterButtons.length) {
+        const featuredProjects = ['PFIS', 'Quiz App', 'NextEdge IT & Design (Business Site)', 'Biotech Diagnostic Services', 'Praise Media Team', 'Graphics'];
+        const isArchivePage = document.body.classList.contains('projects-page');
+        projectCards.forEach(card => {
+            if (!card.dataset.category) {
+                const title = (card.querySelector('h3')?.textContent || '').toLowerCase();
+                const category = /graphic/.test(title) ? 'design' : /website|market|biotech|home care|nextedge|media team/.test(title) ? 'web' : 'apps';
+                card.dataset.category = category;
+            }
+            if (!card.dataset.featured) card.dataset.featured = String(featuredProjects.includes(card.querySelector('h3')?.textContent.trim()));
+        });
+        let activeFilter = 'all';
+        const applyProjectFilters = () => {
+            const searchTerm = (projectSearch?.value || '').trim().toLowerCase();
+            let visibleCount = 0;
+            projectCards.forEach(card => {
+                const matchesCategory = activeFilter === 'all' || card.dataset.category === activeFilter;
+                const matchesSearch = !searchTerm || card.textContent.toLowerCase().includes(searchTerm);
+                const matchesFeatured = isArchivePage || activeFilter !== 'all' || searchTerm || card.dataset.featured === 'true';
+                const isVisible = matchesCategory && matchesSearch && matchesFeatured;
+                card.hidden = !isVisible;
+                if (isVisible) visibleCount += 1;
+            });
+            if (emptyProjects) emptyProjects.hidden = visibleCount !== 0;
+            if (archiveCount) archiveCount.textContent = String(visibleCount);
+        };
+        filterButtons.forEach(button => button.addEventListener('click', () => {
+            activeFilter = button.dataset.filter || 'all';
+            filterButtons.forEach(filterButton => {
+                const isActive = filterButton === button;
+                filterButton.classList.toggle('is-active', isActive);
+                filterButton.setAttribute('aria-pressed', String(isActive));
+            });
+            applyProjectFilters();
+        }));
+        projectSearch?.addEventListener('input', applyProjectFilters);
+        applyProjectFilters();
+    }
+
+    document.querySelectorAll('.current-year').forEach(year => { year.textContent = String(new Date().getFullYear()); });
 
     // --- Scroll-to-Top Button Functionality ---
     const scrollToTopBtn = document.getElementById('scrollToTopBtn');
@@ -100,8 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 behavior: 'smooth'
             });
         });
-    } else {
-        console.warn("Scroll to top button with ID 'scrollToTopBtn' not found.");
     }
 
     // --- Fade-in on Scroll Animation (Intersection Observer) ---
@@ -162,19 +230,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Initialize carousel position
         updateCarousel();
-    } else {
-        console.warn("Testimonial carousel elements not fully found. Carousel might not function.");
     }
 
     // --- EmailJS Integration for Contact Form ---
-    // Initialize EmailJS with your Public API Key
-    emailjs.init("KBzrXsKlJPofF9Q9Y"); // IMPORTANT: Replace with your actual Public API Key from EmailJS
+    // Initialize EmailJS when its external script is available.
+    if (window.emailjs) window.emailjs.init("KBzrXsKlJPofF9Q9Y");
 
     const contactForm = document.getElementById('contactForm');
 
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent default form submission
+
+            const status = document.getElementById('contact-status');
+            const submitButton = contactForm.querySelector('[type="submit"]');
+            if (!window.emailjs) {
+                if (status) status.textContent = 'The message service is unavailable right now. Please email me directly instead.';
+                return;
+            }
 
             const serviceID = "service_xwbbdjs";   // IMPORTANT: Replace with your actual Service ID from EmailJS
             const templateID = "template_nzfuakh"; // IMPORTANT: Replace with your actual Template ID from EmailJS
@@ -201,18 +274,18 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             // Send the email using emailjs.send with the custom parameters
-            emailjs.send(serviceID, templateID, templateParams)
+            if (status) status.textContent = 'Sending your message…';
+            if (submitButton) submitButton.disabled = true;
+            window.emailjs.send(serviceID, templateID, templateParams)
                 .then(() => {
-                    alert('Your message has been sent successfully!');
+                    if (status) status.textContent = 'Thanks — your message has been sent successfully.';
                     contactForm.reset(); // Clear all form fields after successful submission
                 }, (error) => {
                     console.error('Failed to send message:', error);
-                    alert('Oops! Something went wrong. Please try again later.');
-                });
+                    if (status) status.textContent = 'Something went wrong. Please try again or email me directly.';
+                })
+                .finally(() => { if (submitButton) submitButton.disabled = false; });
         });
-    } else {
-        // This error will show in the console if the form with ID 'contactForm' isn't found in your HTML
-        console.error("Contact form with ID 'contactForm' not found. EmailJS will not be active.");
     }
 
 }); // THIS IS THE CRUCIAL MISSING CLOSING BRACE FOR DOMContentLoaded

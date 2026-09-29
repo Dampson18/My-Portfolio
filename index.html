@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Kelvin Dampson - A dedicated Frontend Developer showcasing modern web projects and skills.">
-    <meta name="keywords" content="Kelvin Dampson, Frontend Developer, Web Development, HTML, CSS, JavaScript, Portfolio, UI/UX, Ghana Developer">
-    <title>Kelvin Dampson | Frontend Developer</title>
+    <meta name="description" content="Kelvin Dampson is a Ghana-based web developer building fast, accessible digital experiences with HTML, CSS, JavaScript, React, PHP, Python and WordPress.">
+    <meta name="keywords" content="Kelvin Dampson, Web Developer, Frontend Developer, HTML, CSS, JavaScript, React, PHP, Python, WordPress, Ghana">
+    <meta name="theme-color" content="#0b0f14">
+    <title>Kelvin Dampson — Web Developer</title>
     <link rel="stylesheet" href="assets/css/styles.css">
 
     <link rel="icon" href="assets/images/kelvin.jpeg" type="image/jpeg" sizes="32x32">
     <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" sizes="180x180">
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
-    <meta name="theme-color" content="#3498db"> <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
@@ -23,7 +24,8 @@
 
 
     <header id="navbar">
-        <div class="hamburger" id="hamburger-menu">
+        <a class="brand-mark" href="#top" aria-label="Kelvin Dampson home"><span class="brand-bracket">&lt;</span>kd<span class="brand-bracket"> /&gt;</span></a>
+        <div class="hamburger" id="hamburger-menu" aria-label="Open navigation" aria-expanded="false" role="button" tabindex="0">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
@@ -33,6 +35,7 @@
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="other-projects.html">All projects <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#certifications">Certifications</a></li>
@@ -40,14 +43,28 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme" title="Toggle color theme"><i class="fas fa-sun" aria-hidden="true"></i></button>
     </header>
 
-    <header class="hero-section">
-        <div class="header-overlay"></div>
+    <header class="hero-section" id="top">
+        <div class="hero-grid-bg" aria-hidden="true"></div>
         <div class="hero-content">
-            <h1>Kelvin Dampson</h1>
-            <p class="tagline">Crafting Intuitive & Engaging Web Experiences</p>
-            <a href="#portfolio" class="cta-button">Explore My Work <i class="fas fa-arrow-right"></i></a>
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="status-dot"></span> WEB DEVELOPER <span class="eyebrow-location">· GHANA, GMT</span></p>
+                <h1>Hey, I’m Kelvin.<br><span>I build for the web.</span></h1>
+                <p class="tagline">Web developer turning ideas into thoughtful, high-performing digital experiences — from polished interfaces to practical tools.</p>
+                <div class="hero-actions">
+                    <a href="#portfolio" class="cta-button">Explore my work <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    <a href="#contact" class="text-button">Let’s talk <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                </div>
+                <div class="hero-stack"><span>BUILDING WITH</span><b>HTML</b><b>CSS</b><b>JavaScript</b><b>React</b><b>PHP</b><b>Python</b><b>WordPress</b></div>
+            </div>
+            <div class="code-window" aria-label="A code editor preview showing Kelvin's developer profile">
+                <div class="window-bar"><span class="window-lights"><i></i><i></i><i></i></span><span>kelvin.config.js</span><i class="fas fa-ellipsis" aria-hidden="true"></i></div>
+                <div class="code-content"><div><span class="code-line">01</span><span class="code-purple">const</span> <span class="code-blue">developer</span> = {</div><div><span class="code-line">02</span>&nbsp;&nbsp;name: <span class="code-green">"Kelvin Dampson"</span>,</div><div><span class="code-line">03</span>&nbsp;&nbsp;role: <span class="code-green">"Web Developer"</span>,</div><div><span class="code-line">04</span>&nbsp;&nbsp;location: <span class="code-green">"Ghana 🇬🇭"</span>,</div><div><span class="code-line">05</span>&nbsp;&nbsp;stack: [</div><div><span class="code-line">06</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-orange">"React"</span>, <span class="code-orange">"PHP"</span>,</div><div><span class="code-line">07</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-orange">"Python"</span>, <span class="code-orange">"WordPress"</span></div><div><span class="code-line">08</span>&nbsp;&nbsp;],</div><div><span class="code-line">09</span>&nbsp;&nbsp;focus: <span class="code-green">"useful experiences"</span>,</div><div><span class="code-line">10</span>&nbsp;&nbsp;build: () =&gt; <span class="code-green">"something useful"</span></div><div><span class="code-line">11</span>};<span class="code-cursor"></span></div></div>
+                <div class="window-footer"><span><i class="fas fa-code-branch" aria-hidden="true"></i> main</span><span><i class="fas fa-circle-check" aria-hidden="true"></i> Ready to build</span><span>UTF-8</span></div>
+            </div>
+            <a class="scroll-cue" href="#about"><span></span> SCROLL TO EXPLORE</a>
         </div>
     </header>
 
@@ -86,6 +103,16 @@
                     <p>Foundational knowledge of React.js and Next.js for component-based UI development and state management.</p>
                 </div>
                 <div class="skill-item">
+                    <i class="fab fa-php"></i>
+                    <h3>PHP & WordPress</h3>
+                    <p>Building and customizing content-managed websites, themes, and practical web solutions.</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-python"></i>
+                    <h3>Python</h3>
+                    <p>Using Python for scripting, automation, and building useful programming projects.</p>
+                </div>
+                <div class="skill-item">
                     <i class="fas fa-mobile-alt"></i>
                     <h3>Responsive Design</h3>
                     <p>Ensuring websites look and perform flawlessly across all devices and screen sizes.</p>
@@ -120,7 +147,11 @@
         </section>
 
         <section id="portfolio" class="fade-in-section">
-            <h2>Featured Projects</h2>
+            <div class="section-heading"><p class="section-kicker">A FEW THINGS I’VE BUILT</p><h2>Featured Projects</h2><p>Real projects, thoughtful details, and a little bit of experimentation.</p></div>
+            <div class="project-toolbar" aria-label="Filter projects">
+                <div class="project-filters" role="group" aria-label="Project categories"><button type="button" class="filter-chip is-active" data-filter="all" aria-pressed="true">Featured</button><button type="button" class="filter-chip" data-filter="web" aria-pressed="false">Websites</button><button type="button" class="filter-chip" data-filter="apps" aria-pressed="false">Web apps</button><button type="button" class="filter-chip" data-filter="design" aria-pressed="false">Design</button></div>
+                <label class="project-search"><i class="fas fa-magnifying-glass" aria-hidden="true"></i><input type="search" id="project-search" placeholder="Search projects…" aria-label="Search projects"></label>
+            </div>
             <div class="projects-grid">
 
                 <div class="project-card">
@@ -256,7 +287,7 @@
                 </div>
 
                                  <div class="project-card">
-                    <img src="" alt="Media Team Thumbnail">
+                    <img src="assets/images/webdesign.jpg" alt="Home Care Website project preview" loading="lazy">
                     <div class="project-info">
                         <h3>Home Care Website</h3>
                         <p>A website showcasing a Home Care service.</p>
@@ -274,6 +305,8 @@
                 </div>
                 
             </div>
+            <p class="project-empty" id="project-empty" hidden>No matching projects yet. Try another search.</p>
+            <div class="projects-more"><a href="other-projects.html" class="outline-button">Browse all projects <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
         </section>
 
         <!--Services-->
@@ -392,6 +425,7 @@
                 </div>
                 <button type="submit" class="cta-button send-message-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
             </form>
+            <p id="contact-status" class="contact-status" role="status" aria-live="polite"></p>
             <div class="contact-info-list">
                 <p><i class="fas fa-envelope"></i> Email: <a href="mailto:kelvinfaraday15@gmail.com">kelvinfaraday15@gmail.com</a></p>
                 <p><i class="fas fa-phone-alt"></i> Phone: <a href="tel:+233204242615">+233 20 424 2615</a></p>
@@ -404,7 +438,7 @@
     </button>
 
     <footer>
-        <p>© 2024 Kelvin Dampson. All Rights Reserved.</p>
+        <p>© <span class="current-year">2026</span> Kelvin Dampson. All Rights Reserved.</p>
         <div class="social-links">
             <a href="https://wa.me/233204242615" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
             <a href="https://t.me/NextEdge2025" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
